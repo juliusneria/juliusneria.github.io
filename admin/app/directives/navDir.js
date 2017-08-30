@@ -1,0 +1,1 @@
+function navDir(){return{restrict:"E",templateUrl:"app/directives/views/nav.html",controller:"navCtrl"}}angular.module("Admin").directive("navDir",navDir);

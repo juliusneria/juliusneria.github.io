@@ -1,0 +1,1 @@
+function footerCtrl(a,b){}angular.module("App").controller("footerCtrl",footerCtrl),footerCtrl.$inject=["$scope","$localStorage"];
