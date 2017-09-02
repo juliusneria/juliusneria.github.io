@@ -18,7 +18,7 @@
                     Start Date<input id="startDate" type="text" ng-model="startdate" class="uk-width-1-1 date uk-margin-small-bottom" required>
                     End Date<input id="endDate" type="text" ng-model="enddate" class="uk-width-1-1 date uk-margin-small-bottom" required>
                     Room
-                    <select class="uk-width-1-1 uk-margin-small-bottom" name="txtRoom">
+                    <select ng-model="cottage" class="uk-width-1-1 uk-margin-small-bottom" name="txtRoom">
                         <option ng-repeat="data in cottages" value="{{data.id}}">{{data.name}}</option>
                     </select>
                 </div>
@@ -31,7 +31,8 @@
                     Address<input type="text" ng-model="address" placeholder="Address" class="uk-width-1-1  uk-margin-small-bottom" required>
                     Email Address<input type="email" ng-model="email" placeholder="Email address" class="uk-width-1-1  uk-margin-small-bottom">
                     Message<textarea ng-model="message" placeholder="Message" class="uk-width-1-1" required></textarea>
-                    <button ng-click="submit()" class="uk-float-right bookbtn" >BOOK NOW</button>
+                    <button ng-show="!isLoading" ng-click="submit()" class="uk-float-right bookbtn" >BOOK NOW</button>
+                    <button ng-show="isLoading" class="uk-float-right bookbtn" ><i class="uk-icon-spin uk-icon-spinner"></i></button>
                 </div>
             </div>
         </div>

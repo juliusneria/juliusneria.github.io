@@ -18,15 +18,16 @@
 
                             <div class="form-div">
                                 <div class="uk-width-1-1">
-                                    <input type="text" placeholder="Name" class="uk-width-1-1" required>
-                                    <input type="text" placeholder="Mobile No." class="uk-width-1-1" required>
-                                    <input type="text" placeholder="Subject" class="uk-width-1-1" required>
+                                    <input type="text" ng-model="inqName" placeholder="Name" class="uk-width-1-1" required>
+                                    <input type="text" ng-model="inqMobile" placeholder="Mobile No." class="uk-width-1-1" required>
+                                    <input type="text" ng-model="inqSubject" placeholder="Subject" class="uk-width-1-1" required>
                                 </div>
                             </div>
                             <div class="uk-padding-remove">
                                 <div class="uk-width-1-1">
-                                    <textarea placeholder="Message" class="uk-width-1-1" required></textarea>
-                                    <button class="uk-float-right sendbtn" type="submit">Send</button>
+                                    <textarea placeholder="Message" ng-model="inqMessage" class="uk-width-1-1" required></textarea>
+                                    <button ng-show="!isLoadingInquiry" ng-click="submitInq()" class="uk-float-right sendbtn" type="submit">Send</button>
+                                    <button ng-show="isLoadingInquiry" class="uk-float-right sendbtn" type="submit"><i class="uk-icon-spin uk-icon-spinner"></i></button>
                                 </div>
                             </div>
                         </div>
